@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:task_for_promina_agency/resources/strings_manager.dart';
 
+import '../../../utils/custom_text_field.dart';
+
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
 
@@ -14,7 +16,12 @@ class _LoginViewState extends State<LoginView> {
     return Scaffold(
       body:Stack (children: [
         Container(),
-        Column(children: [Text('My Gellary'),Container (child: Column(children: [Text(StringsManager.login)],),)],)
+        Column(children: [Text('My Gellary'),Container (child: Column(children: [Text(StringsManager.login),
+        
+        CustomTextField(hint:"Pawssword",),
+         CustomTextField(),
+        
+        ],),)],)
       ],) ,
     );
   }

@@ -1,12 +1,15 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+import '../resources/values_manager.dart';
 
 class CustomBox extends StatelessWidget {
   CustomBox(
       {super.key,
-      required this.background,
+      required this.backgroundColor,
       required this.child,
       required this.onTap});
-  Color background;
+  Color backgroundColor;
   Widget child;
   dynamic onTap;
   @override
@@ -14,9 +17,21 @@ class CustomBox extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
+        child: Stack(
+          children: [
+            child,
+            Positioned.fill(
+                child: BackdropFilter(
+              filter: ImageFilter.blur(sigmaX: 0.5, sigmaY: 0.5),
+              child: Container(
+                color: Colors.white.withOpacity(0.5),
+              ),
+            )),
+          ],
+        ),
         decoration: BoxDecoration(
-            color: background,
-            borderRadius: BorderRadius.circular(10),
+            color: backgroundColor,
+            borderRadius: BorderRadius.circular(AppSize.s12),
             border:
                 Border.all(color: const Color.fromARGB(255, 190, 190, 190))),
       ),

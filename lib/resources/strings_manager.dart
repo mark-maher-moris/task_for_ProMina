@@ -8,5 +8,5 @@ class StringsManager {
   static String logOut = "Log out";
   static String upload = "Upload";
   static String gellary = "Gellary";
-  static String camer = "Camera";
+  static String camera = "Camera";
 }
